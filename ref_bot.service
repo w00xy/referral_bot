@@ -1,0 +1,15 @@
+[Unit]
+Description=Referral Telegram Bot by wx
+After=network.target
+
+[Service]
+WorkingDirectory=/home/ref_bot
+Environment="PATH=/home/ref_bot/venv/bin:$PATH"
+ExecStart=/home/ref_bot/venv/bin/python /home/ref_bot/main.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/ref_bot/log/bot.log
+StandardError=append:/home/ref_bot/log/bot.log
+
+[Install]
+WantedBy=multi-user.target
